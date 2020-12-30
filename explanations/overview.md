@@ -1,0 +1,7 @@
+# Overview
+## Goal
+My goal is to create a machine that runs Linux and at least one virtual machine at the same time that has full access on one of my graphics cards. That virtual machine will run Windows so I should be able to play games nearly as good as on a normal Windows machine. I'm already considering to create a MacOS virtual machine too but a stable Windows virtual machine is my main goal. 
+
+## Intention
+Most people will probably wonder why I want to create such a machine, especially if I tell you that I always used Windows for everything I did so far, including gaming, coding, doing stuff for school and much more. I think that the main reason is that I really want to create such a build just because I'm really interested in IT stuff and like the idead of running multiple operating systems on only one pc simultaneously. Esepcially the challange behind is more exciting than just setting up a dual boot or useing two different machines, one for gaming and the other one for productivity and creativity. Another point is probably the fact that such a machine is flexible compared to a normal one. I can easily create a new vm if an old one's broken, slow or just full of garbage and my host os won't be affected that much.  
+So maybe you're now as interested about gpu-passthrough as I am and want to do something similar or at least get to know more about it.

@@ -17,4 +17,4 @@ them.
 ## BIOS Settings
 None of my parts are overclocked, neither the CPU, the RAM or my GPU. Even PBO is disabled. My RAM uses its XMP-profile
 (3000MHz CL16-18-18-38) and never lead into any errors or annoying bugs within this machine. Of course, because the whole
-system is based on virtualization, [SVM](../glossary.md#SVM) is enabled and so is [IOMMU](../glossary.md#IOMMU) too. Because of older approaches I do know that I might have to try [CSM](../glossary.md#CSM) enabeld too. Most of the other settings are either set default or are not that important.
+system is based on virtualization, [SVM](../explanations/glossary.md#SVM) is enabled and so is [IOMMU](../explanations/glossary.md#IOMMU) too. Because of older approaches I do know that I might have to try [CSM](../explanations/glossary.md#CSM) enabeld too. Most of the other settings are either set default or are not that important.
