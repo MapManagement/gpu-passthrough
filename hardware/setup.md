@@ -6,7 +6,7 @@
 **RAM:** 32GiB 3000MHz CL16
 **PSU:** BitFenix Formula Gold 750W  
 **Cooler:** Arctic Liquid Freezer II 360  
-**Host GPU:** (not final) PowerColor Radeon R9 290 OC  
+**Host GPU:** (not final) PNY GT 710
 in first PCIe slot  
 **Guest GPU:** Sapphire Pulse Radeon RX Vega 56  
 in second PCIe slot  
