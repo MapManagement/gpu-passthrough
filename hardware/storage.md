@@ -1,0 +1,26 @@
+# Storage
+Since I created this repository, I acquired some additional drives that can be used for my machine. It really is a weird mix of different SSDs and HDDs with varying capacities, read/write speeds and ages. Following structure should visualize how I plan to use them but as always, it's not a final decision and will possibly change while setting up a machine for my daily uses cases:
+- **256 GB NVMe**
+  - Name: Silicon Power P34A80
+  - Read: 3400MB/​s | Write: 2700MB/s
+  - Usage: Linux as Host OS
+- **240 GB SSD**
+  - Name: Crucial BX500
+  - Read: 540B/​s | Write: 500MB/s
+  - Usage: thinking about a Windows drive for a dual boot -> guaranty that Windows can easily be used while setting up the actual Linux machine
+- **1 TB SSD**
+  - Crucial MX500
+  - Read: 560MB/​s | Write: 510B/s
+  - Usage: Guest OSes / VMs
+- **120 GB SSD**
+  - Intenso Premium III
+  - Read: 550MB/​s | Write: 470MB/​s
+  - Usage: no idea yet -> spare SSD
+- **1 TB HDD**
+  - Name: Toshiba P300
+  - 7200RPM
+  - Usage: mass storage for my Linux distro
+- **3 TB HDD**
+  - Western Digital WD Blue
+  - 5400RPM
+  - Usage: either for a home cloud/NAS or an alternative for my mass storage
