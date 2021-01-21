@@ -11,3 +11,4 @@ I tried to structure as well as possible. At the moment, following main section 
 - [ideas](problems.md) for further steps
 - [glossary](explanations/glossary.md), if you want to look up some synonyms
 - [the problems](problems.md) I went into
+- all [sources](sources.md) that I used and helped me while working on this machine
