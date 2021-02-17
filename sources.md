@@ -13,4 +13,5 @@
   - https://www.youtube.com/watch?v=ogvtv-sTpYE
 
 - ## Heiko Sieger
-  - https://heiko-sieger.info/iommu-groups-what-you-need-to-consider/
+  - [website](https://heiko-sieger.info/)
+  - [IOMMU groups in detail](https://heiko-sieger.info/iommu-groups-what-you-need-to-consider/)
