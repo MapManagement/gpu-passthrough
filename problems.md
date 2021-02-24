@@ -12,3 +12,15 @@ puts all lanes connected to it into one IOMMU group. In my case it's two PCIe sl
 Of course, I also need to pass through some USB devices like a keyboard or a mouse and my audio to use a microphone or
 some headphones. Passing through a keyboard and a mouse is quiet easy but at first, I had some problems with my
 controller and I really need to check how I can use my normal audio devices within the vm.
+
+## Anti Cheats
+The primary reason why I really want such a machine is because of the comfortable way of using Linux for daily stuff
+and Windows mostly for gaming. I'm not only talking aboout single player games, no, the games I want to play also
+include several mutliplayer games. But multiplayer games always bring something with them and that is anti cheat
+software. The are quite important for some games and without them it would be definitely hard to play many games
+without running into cheaters and so on. On the other hand they have been a problem for Linux users for a long time
+and won't allow most multiplayer games to run under Linux. Eventhough I will play in a VM, some anti cheats still
+kick or even ban your from a small amount of games since the developers do not really like people playing their
+game in a VM. Luckily there are workarounds to bypass those anti cheats from detectin my VM and I will test them for
+sure. Therefore [this file](games.md) contains games that I tested so far, how my machine performed, what problems
+occured and how the anti cheat reacted to my VM.
