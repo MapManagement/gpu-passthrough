@@ -3,7 +3,7 @@ The first time I tried to create a Windows virtual machine with a dedicated GPU 
 simple test. I wanted to check how easy it is to create such a VM using Pop!_OS and what I have to expect and
 take care of when I set up my daily machine. Following section explain my approach and experiences.
 
-# Binding the GPU
+## Binding the GPU
 I have to be honest that the very first time I tried to bind the GPU I recognized that my IOMMU groups are not
 quite suitbale if I want to use the second PCIe slot for my guest GPU. A detailed version of the problem can be
 found [here](../problems.md##B550-board-and-its-IOMMU-groups). Therefore I swapped my GPUs and used the guest GPU in the first slot. My
@@ -86,7 +86,22 @@ Afterwards you have to reboot your machine since the freshly added parameters ar
 did everything right, you should not have any output ont any screen that is connected to your guest GPU. Otherwise
 you probably did something wrong. Of course, this explanation cannot help everyone since the whole setup really
 depends on your machine and components. 
+As soon as the machine rebooted, you can easily check if the binding worked by executing following command:
+```
+lspci -k
+```
+This command will print all PCI devies and buses of your system. You should look for your GPU and check the 
+Kernel driver. If you did everything right, it should use the ``vfio-pci`` driver. To clarify what I mean:
+```
+0b:00.0 VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Vega 10 XL/XT [Radeon RX Vega 56/64] (rev c3)
+	Subsystem: Sapphire Technology Limited Vega 10 XL/XT [Radeon RX Vega 56/64]
+	Kernel driver in use: vfio-pci
+	Kernel modules: amdgpu
+0b:00.1 Audio device: Advanced Micro Devices, Inc. [AMD/ATI] Vega 10 HDMI Audio [Radeon Vega 56/64]
+	Subsystem: Advanced Micro Devices, Inc. [AMD/ATI] Vega 10 HDMI Audio [Radeon Vega 56/64]
+	Kernel driver in use: vfio-pci
+	Kernel modules: snd_hda_intel
 
+```
 
-
-
+## Creating the VM
