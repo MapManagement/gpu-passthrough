@@ -24,3 +24,13 @@ kick or even ban your from a small amount of games since the developers do not r
 game in a VM. Luckily there are workarounds to bypass those anti cheats from detectin my VM and I will test them for
 sure. Therefore [this file](games.md) contains games that I tested so far, how my machine performed, what problems
 occured and how the anti cheat reacted to my VM.
+
+## AMD's reset bug
+As you should already know, I'm using a Vega 56 for my guest OS. Most things should work fine and the performance is 
+not that worse compared to a normal Windows machine. But there's one problem with AMD GPUs when it comes to the vfio
+binding. It's called the "reset bug" because of following problem: Most non current gen GPUs do not reset once you
+shutdown the guest. This means that you cannot use the card again if you want to boot the guest again. You simply just
+won't have any output from it and therefore the whole reason of using a separate graphics card for your VMs becomes
+obsolet. Then you have to restart your whole machine and to be honest, if you would keep it like that you could also
+set up a dual boot. It would probably be the same at the end. Some cards, really depending on the generation and the
+BIOS of the card, can be passed through multiple times without rebooting if you do some workarounds. My Vega 56 suffers from that bug and before I'm not able to buy a new GPU, I have to check if I can find a fix for it.
