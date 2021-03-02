@@ -55,8 +55,14 @@ BIOS of the card, can be passed through multiple times without rebooting if you 
 Surprisingly the bug just went away without doing something against it. I'm not sure what fixed it since I did not
 change anything that would be able to reset the GPU after closing the VM. Maybe my dual boot with Pop!_OS and
 Windows 10 has some impact on the graphics card. It's also possible that the vfio driver that I recently
-installed in my Windows VM changed some stuff but as I already said, I cannot tell what really solved the problem.
-Of course, I will update this section as soon as I have more information about it.
+installed in my Windows VM changed some stuff but as I already said, I cannot tell what really solved the
+problem.  
+**Update:** I found out that my graphics card is affected too but I probably missunderstood the bug a little bit.
+If I turn my VM off properly, either by pressing "Shut down" in Windows or by using the "Shut down" button in
+virt-manager, I can restart the guest as often as I want to. If I use the "Force off" button in virt-manager, the
+VM will not start again. My Vega cannot reset itself and therefore it won't useable at a later point. But should 
+not be such a big problem if my guest runs stable enough. It's only annoying at the beginning and while testing 
+some stuff.
 
 ---
 
