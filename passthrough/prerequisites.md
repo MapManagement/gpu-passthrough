@@ -14,3 +14,8 @@ To simplify the whole installation, I'll leave this here:
 ```
 sudo apt install emu-kvm qemu-utils libvirt-daemon-system libvirt-clients virt-manager ovmf
 ```
+
+## ISO Images
+There are two images that are necessary for a Windows VM using a passthrough:
+- [Windows image file](https://www.microsoft.com/en-gb/software-download/windows10ISO)
+- [vfio driver ISO](https://docs.fedoraproject.org/en-US/quick-docs/creating-windows-virtual-machines-using-virtio-drivers/index.html) (I recommend choosing the stable release)

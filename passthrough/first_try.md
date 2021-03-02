@@ -105,3 +105,23 @@ Kernel driver. If you did everything right, it should use the ``vfio-pci`` drive
 ```
 
 ## Creating the VM
+### Pre-Configuration
+Now I opened virt-manager and created a new VM by clicking on the top left icon.  
+**(Step 1)** A new window will pop up which wants to know how the operating system needs to be installed. Simply
+just select the "Local install media".
+**(Step 2)** The following step wants you to choose the image file. Select your Windows 10 ISO by browsing through
+your local file and make sure that the operating system is recognized as Windows 10 and not something else. If so,
+change it to Windows 10 and go forward.  
+**(Step 3)** Now you have to set your allocated memory and the amoutn of threads you want to give to the VM.
+Adjust it to the specs of your pc but try to keep enough resources for your host.  I chose to give 16GB and 12 threads of my host to the guest.  
+**(Step 4)** The storage will be the next in the line. Depending on your system, you can either create a disk
+image on your host drives, create a new partition or pass through a whole drive. For now, especially because I'm
+only testing, I decided to go with a disk image on one of my host drives. I plan on passing through a whole
+disk but it seems like my IOMMU groups will prevent me from doing so. I need to check this in the future.
+Nonetheless, I gave about 100GB to my guest but it is going to be more as soon as I tested enough.  
+**(Step 5)** Last but not least you can give your VM a name and decide whether you want to **"customize the
+configuration before install"**. You need to tick this checkbox to be able to give a dedicated GPU to your guest.
+The "Network selection" might be interesting but did not play any role for my machine at this time. So I finished
+the pre-configuration by pressing "Finish"
+### Advanced Configuration
+
