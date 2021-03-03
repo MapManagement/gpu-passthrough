@@ -1,5 +1,12 @@
 # ToDo
 
+## Tests/Problem fixing
+- [ ] fans spinning at max speed after shutting VM down
+- [ ] testing overall performance in games
+- [ ] checking the behavior of popular anti cheats
+- [ ] testing the direct boot via own partition/drive
+- [ ] adding sound to VM (input and output)
+- [ ] adding USB devices like controllers to VM
 ## vfio Binding
 - [x] understanding it in Pop!_OS
 - [x] doing it on own machine
