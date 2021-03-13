@@ -15,3 +15,9 @@
 - ## Heiko Sieger
   - [website](https://heiko-sieger.info/)
   - [IOMMU groups in detail](https://heiko-sieger.info/iommu-groups-what-you-need-to-consider/)
+
+- ## IT-Talents
+  - https://www.it-talents.de/blog/it-talents/was-ist-ein-hypervisor
+
+- ## Elektronik Kompendium
+  - https://www.elektronik-kompendium.de/sites/com/1101011.htm
