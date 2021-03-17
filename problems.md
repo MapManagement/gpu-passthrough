@@ -62,7 +62,15 @@ If I turn my VM off properly, either by pressing "Shut down" in Windows or by us
 virt-manager, I can restart the guest as often as I want to. If I use the "Force off" button in virt-manager, the
 VM will not start again. My Vega cannot reset itself and therefore it won't useable at a later point. But should 
 not be such a big problem if my guest runs stable enough. It's only annoying at the beginning and while testing 
-some stuff.
+some stuff.  
+**Update:** After testing around a longer time, I noticed another interesting bug that is connected to AMD's reset bug.
+No matter how I shutdown my VM, after about 15min the fans of my GPU will spin at their maximum speed (you cannot not
+hear it :D) and I'm not able to start any VM which uses my guest GPU. If I try to, I get an error which says:  
+```
+Unknown PCI header type '127'
+```
+Unlike the "normal" reset bug it can be fixed by using a specific BIOS version. Therefore I already updated my BIOS to
+the most recent version. I have to admit that I did use the oldest available version of it before the update.
 
 ---
 
