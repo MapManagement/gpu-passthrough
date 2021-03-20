@@ -1,7 +1,7 @@
 # ToDo
 
 ## Tests/Problem fixing
-- [ ] fans spinning at max speed after shutting VM down
+- [x] gpu fans spinning at max speed after shutting VM down
 - [ ] testing overall performance in games
 - [ ] checking the behavior of popular anti cheats
 - [ ] testing the direct boot via own partition/drive
@@ -13,7 +13,7 @@
 - [ ] adding more parts (drives, controllers...)
 ## Reset Bug
 - [ ] finding workaround
-- [ ] understanding it
+- [x] understanding it
 - [ ] testing for stability
 - [ ] writing it down
 
