@@ -21,3 +21,7 @@
 
 - ## Elektronik Kompendium
   - https://www.elektronik-kompendium.de/sites/com/1101011.htm
+
+- ## SomeOrdinaryGamers
+  - [setting up a gpu passthrough](https://www.youtube.com/watch?v=h7SG7ccjn-g)
+  - [Valorant in a KVM](https://www.youtube.com/watch?v=L1JCCdo1bG4)
