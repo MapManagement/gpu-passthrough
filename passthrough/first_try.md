@@ -108,8 +108,9 @@ Kernel driver. If you did everything right, it should use the ``vfio-pci`` drive
 ### Pre-Configuration
 Now I opened virt-manager and created a new VM by clicking on the top left icon.  
 **(Step 1)** A new window will pop up which wants to know how the operating system needs to be installed. Simply
-just select the "Local install media".
-**(Step 2)** The following step wants you to choose the image file. Select your Windows 10 ISO by browsing through
+just select the "Local install media".  
+**(Step 2)** The following step wants you to choose the image file. Select your Windows
+10 ISO by browsing through
 your local file and make sure that the operating system is recognized as Windows 10 and not something else. If so,
 change it to Windows 10 and go forward.  
 **(Step 3)** Now you have to set your allocated memory and the amoutn of threads you want to give to the VM.
@@ -124,4 +125,31 @@ configuration before install"**. You need to tick this checkbox to be able to gi
 The "Network selection" might be interesting but did not play any role for my machine at this time. So I finished
 the pre-configuration by pressing "Finish"
 ### Advanced Configuration
+I will only cover the important parts. So things I'm not metioning should only be changed
+if you know why and how to change them. Don't be surprised if some pictures don't look
+like your virt-manager window. I made these after testing the VM and therefore I can't
+edit all options anymore.  
+So first of all, you have to change the ``Firmware`` to an UEFI. I'm not sure what the 
+different listd UEFI's do but I chose ``UEFI x86_64: /usr/share/OVMF/OVMF_CODE_4M.fd``.
+Everything else is not needed to be changed.
+![](/resources/config-overview.png)  
+In the next step you really need to edit is the ``CPUs`` section. You're probably not 
+using the same CPU and therefore you need to adjust the numbers to your CPU. Since I'm
+using a 12C/24T processor, I decided to give 6C/12T to my gaming VM. I recommend to tick
+the  ``Copy host CPU configuration`` and ``Manually set CPU topology`` box. ``Sockets`` should be set to your amount of CPUs you're using, ``Cores`` to the amount of your actual
+cores and ``Threads`` to the amount of logical threads one of your cores has. The picture
+explains most of it I think. Depending on the things you select here, you can gain some
+performance but for most people this type of setting up the CPU configuration should work.
+(there is stuff like CPU pinning or the option ``host-passthrough`` instead of ``Copy
+host CPU configuration``).
+![](/resources/config-cpus.png) 
+Now you add the storage device for your botting image. Hopefully you already donwloaded
+the Windows 10 ISO. To create such a device, you have to click on ``Add Hardware`` on the
+bottom left. Click on a so called ``Storage`` device, choose ``Select or create custom
+storage`` and find your image file. Change the ``Device type`` to ``CDROM device`` and
+your good to go by clicking on ``Finish``.  
+![](/resources/config-image-file.png)  
+Don't forget to change the boot order under ``Boot Options``.
+![](/resources/config-boot-order.png) 
+
 
