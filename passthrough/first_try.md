@@ -132,7 +132,7 @@ edit all options anymore.
 So first of all, you have to change the ``Firmware`` to an UEFI. I'm not sure what the 
 different listd UEFI's do but I chose ``UEFI x86_64: /usr/share/OVMF/OVMF_CODE_4M.fd``.
 Everything else is not needed to be changed.
-![](./resources/config-overview.png)  
+![](/resources/config-overview.png)  
 In the next step you really need to edit is the ``CPUs`` section. You're probably not 
 using the same CPU and therefore you need to adjust the numbers to your CPU. Since I'm
 using a 12C/24T processor, I decided to give 6C/12T to my gaming VM. I recommend to tick
@@ -142,14 +142,14 @@ explains most of it I think. Depending on the things you select here, you can ga
 performance but for most people this type of setting up the CPU configuration should work.
 (there is stuff like CPU pinning or the option ``host-passthrough`` instead of ``Copy
 host CPU configuration``).
-![](./resources/config-cpus.png) 
+![](/resources/config-cpus.png) 
 Now you add the storage device for your botting image. Hopefully you already donwloaded
 the Windows 10 ISO. To create such a device, you have to click on ``Add Hardware`` on the
 bottom left. Click on a so called ``Storage`` device, choose ``Select or create custom
 storage`` and find your image file. Change the ``Device type`` to ``CDROM device`` and
 your good to go by clicking on ``Finish``.  
-![](/.resources/config-image-file.png)  
+![](/resources/config-image-file.png)  
 Don't forget to change the boot order under ``Boot Options``.
-![](./resources/config-boot-order.png) 
+![](/resources/config-boot-order.png) 
 
 
