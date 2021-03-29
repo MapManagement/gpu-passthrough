@@ -143,7 +143,7 @@ performance but for most people this type of setting up the CPU configuration sh
 (there is stuff like CPU pinning or the option ``host-passthrough`` instead of ``Copy
 host CPU configuration``).
 ![](/resources/config-cpus.png) 
-Now you add the storage device for your botting image. Hopefully you already donwloaded
+Now you add the storage device for your booting image. Hopefully you already donwloaded
 the Windows 10 ISO. To create such a device, you have to click on ``Add Hardware`` on the
 bottom left. Click on a so called ``Storage`` device, choose ``Select or create custom
 storage`` and find your image file. Change the ``Device type`` to ``CDROM device`` and
@@ -151,5 +151,28 @@ your good to go by clicking on ``Finish``.
 ![](/resources/config-image-file.png)  
 Don't forget to change the boot order under ``Boot Options``.
 ![](/resources/config-boot-order.png) 
+You will do the exact same with the [virtio drivers](/passthrough/prerequisites.md) you
+probably donwloaded previously. Simply just add another CDROM which contains the drivers.
+You will need them as soon as you installed Windows. Otherwise there are going to occur some
+issues.  
+Last but not least, you have to add your graphics card, a mouse and a keyboard. Therefore you should
+have at least 2 keyboards and mice connected to your machine. One pair for your host and the other one
+for your guest. Make sure that all devices are already connected before trying to give them to the VM.
+Of course, you can also just passthrough a whoel USB controller but this is another topic which could
+be added to this repo in the near future.  
+Just hit that ``Add Hardware`` button and find ``PCI Host Device``. You're going to see a bunch of
+your PCI devices. Now you need to add all devices that we bound to vfio earlier or in other words, add
+all devices that are in the same IOMMU group as your graphics card. I only needed to add two devices:
+my video and audio controller. The following pictures shows them. Both of them end with ``[Radeon RX
+Vega 56/64]``.  
+![](/resources/config-pci-gpu.png) 
+Repeat that process with your USB devices (mouse, keyboard and everything else you need). Instead of 
+opening ``PCI Host Device`` in virt-manager, you'll need to selct ``USB Host Device`` and find your
+devices.
+![](/resources/config-usb.png) 
+The only thing I changed after thath at my first try can be found [here](/problems.md##Upload-Speed).
+It improves your upload speed quite a lot. This means that I created the VM afterwards and booted into
+it. The whole installation is covered by the next section.
 
 
+## Instaling Windows
