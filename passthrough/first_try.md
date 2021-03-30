@@ -168,11 +168,29 @@ Vega 56/64]``.
 ![](/resources/config-pci-gpu.png) 
 Repeat that process with your USB devices (mouse, keyboard and everything else you need). Instead of 
 opening ``PCI Host Device`` in virt-manager, you'll need to selct ``USB Host Device`` and find your
-devices.
+devices.  
 ![](/resources/config-usb.png) 
-The only thing I changed after thath at my first try can be found [here](/problems.md##Upload-Speed).
-It improves your upload speed quite a lot. This means that I created the VM afterwards and booted into
-it. The whole installation is covered by the next section.
+Furthemore, I recommend keeping a "virtual monitor" so to say. In virt-manager it's called ``Video
+QXL``. It's a simple window which will be recognized as an extra monitor and will be really helpful
+if you're using and AMD card (didn't test it with an Nvidia card so far) because of the [reset bug](/problems.md#AMD's-reset-bug) and/or missing drivers. In my case, I did not get a signal on my second
+monitor and therefore I needed to use this little Window until I installed Windows and the virtio
+drivers.  
+The only thing I changed after the creation process at my first try can be found [here](/problems.md##Upload-Speed).
+It improves your upload speed quite a lot. This means that I created the VM by clicking
+on ``Create`` at the bottom right afterwards and booted into it. The whole installation is covered by
+the next section.
 
+## Installing Windows
+The VM should start after some background processes are finished. Depending on your machine, you
+either see the Windows installation within your "virtual monitor" or on your extra monitor. However,
+you now have to install Windows as usual. There are more than enough out there which explain how
+Windows can be installed and as I already said, it's not different from a installing Windows directly
+on your machine. It's also possible to already install the virtio drivers while selecting your boot
+drive by clicking on ``Load driver``. Make sure to select the right ones and install them. You really
+don't have to unless you need to because of some specific reasons. I'll cover the whole driver
+installation process later on since I did it that way. If you did everything right and don't run into
+any common issues you should end up in Windows like me. I checked the Taskmanager and saw my Vega,
+16GB of RAM and my 6 cores and 12 threads. Now I needed to install the virtio drivers. Compared to
+all other steps I've done so far it seemed to be the easiest one.
 
-## Instaling Windows
+## Configure Windows
