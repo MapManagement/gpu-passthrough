@@ -12,3 +12,4 @@ I tried to structure as well as possible. At the moment, following main section 
 - [glossary](explanations/glossary.md), if you want to look up some synonyms
 - [the problems](problems.md) I went into
 - [all sources](sources.md) that I used and helped me while working on this machine
+- [games](games.md) I tested so far

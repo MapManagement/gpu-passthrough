@@ -2,7 +2,7 @@
 
 ## Tests/Problem fixing
 - [x] gpu fans spinning at max speed after shutting VM down
-- [ ] testing overall performance in games
+- [x] testing overall performance in games
 - [ ] checking the behavior of popular anti cheats
 - [ ] testing the direct boot via own partition/drive
 - [ ] adding sound to VM (input and output)

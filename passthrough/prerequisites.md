@@ -9,7 +9,8 @@ So after installing the AMD ISO of the distro, I configured the GUI (using GNOME
 - [libvirt-clients](https://packages.debian.org/sid/libvirt-clients)
 - [libvirt-daemon-system](https://packages.debian.org/sid/libvirt-daemon-system)
 - [ovmf](https://www.ovirt.org/develop/release-management/features/virt/ovmf.html)
-- [bridge-utils](https://launchpad.net/bridge-utils)
+- [bridge-utils](https://launchpad.net/bridge-utils)  
+
 To simplify the whole installation, I'll leave this here:
 ```
 sudo apt install emu-kvm qemu-utils libvirt-daemon-system libvirt-clients virt-manager ovmf
@@ -18,4 +19,4 @@ sudo apt install emu-kvm qemu-utils libvirt-daemon-system libvirt-clients virt-m
 ## ISO Images
 There are two images that are necessary for a Windows VM using a passthrough:
 - [Windows image file](https://www.microsoft.com/en-gb/software-download/windows10ISO)
-- [virtio driver ISO](https://docs.fedoraproject.org/en-US/quick-docs/creating-windows-virtual-machines-using-virtio-drivers/index.html) (I recommend choosing the stable release)
+- [virtio driver ISO](https://docs.fedoraproject.org/en-US/quick-docs/creating-windows-virtual-machines-using-virtio-drivers/index.html) (I recommend the stable release)

@@ -193,4 +193,4 @@ any common issues you should end up in Windows like me. I checked the Taskmanage
 16GB of RAM and my 6 cores and 12 threads. Now I needed to install the virtio drivers. Compared to
 all other steps I've done so far it seemed to be the easiest one.
 
-## Configure Windows
+## Configuring Windows

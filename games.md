@@ -4,6 +4,7 @@ I tested [Rage 2](https://bethesda.net/en/game/rage2) in the first Windows VM th
 game, it was meant as a feature (the locations and scenes would have matched to thath flickering) or it is because of my
 VM. Either way, I'm really happy about the result and cannot complain about the performance. More detailed test are
 already planned and will be added to this sectionb aswell.
+
 ## Overwatch
 Overwatch was the second game I tested. Compared to Rage 2 it's not a big deal for mid to high-end
 machines at all. Getting constant 60 FPS should not be a problem for most modern pcs but since I'm

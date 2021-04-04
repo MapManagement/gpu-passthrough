@@ -3,7 +3,7 @@
 ## Components
 **Mainboard:** Gigabyte B550 Aorus Pro  
 **CPU:** Ryzen 9 3900X  
-**RAM:** 32GiB 3000MHz CL16
+**RAM:** Corsair Vengeance Pro 64GB 3200MHz CL16  
 **PSU:** BitFenix Formula Gold 750W  
 **Cooler:** Arctic Liquid Freezer II 360  
 **Host GPU:** PowerColor Radeon RX 550 Red Dragon  
