@@ -27,11 +27,11 @@
 - [ ] understand what they do and how they work
 - [ ] writing it down
 
-## Looking Glass
-- [ ] understanding it
-- [ ] checking the requirements and the setup process
-- [ ] trying it on own machine
-- [ ] writing it down
+## Barrier
+- [x] understanding it
+- [x] checking the requirements and the setup process
+- [x] trying it on own machine
+- [x] writing it down
 - [ ] using it for daily tasks
 
 ## Samba
@@ -44,4 +44,5 @@
 ## possible Upgrades
 - [ ] X570 board for better IOMMU groups
 - [ ] new graphics card for better performance overall and reset bug fix
-- [ ] another GPU + more RAM for more VMs simultaneously
+- [ ] another GPU
+- [x] more RAM for more VMs simultaneously
