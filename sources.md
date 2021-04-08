@@ -25,3 +25,5 @@
 - ## SomeOrdinaryGamers
   - [setting up a gpu passthrough](https://www.youtube.com/watch?v=h7SG7ccjn-g)
   - [Valorant in a KVM](https://www.youtube.com/watch?v=L1JCCdo1bG4)
+- ## Pavol Elsig
+  - [looking-glass guide](https://www.youtube.com/watch?v=wEhvQEyiOwI)

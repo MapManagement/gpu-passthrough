@@ -24,3 +24,17 @@ different operating systems. If you installed them on your ``client`` and ``serv
 them via IP-addresses. Of course, you can also configure where your displays are placed:  
 ![](/resources/barrier-configuration.png)
 
+
+## Looking-Glass
+### Overview
+Also a very good piece of software but not the best for my case is [looking-glass](https://looking-glass.io/). It does not
+support a mouse sharing as you would think of in general, it kinda lets you use your guest and host on one monitor and
+I'm not talking about a single-gpu-passthrough. Instead of plugging in a second monitor or switching the source on one
+monitor, you can use your guest in a window. You only need to configure the software, which is not that hard, and any
+video input port. You can either plug it into the same monitor you're already using or you buy a dummy that will be 
+recognized as a second monitor.
+### Installation
+THe installation is not too complex but also not as easy as installing Barrier for example. Therefore I decided to leave
+you two helpful sources here. The first one is the [official wiki](https://looking-glass.io/wiki/Installation) which 
+should cover all details. The seconds one is [a video](https://www.youtube.com/watch?v=wEhvQEyiOwI) by a person that
+already made a bunch of videos about gpu-passthrough.
