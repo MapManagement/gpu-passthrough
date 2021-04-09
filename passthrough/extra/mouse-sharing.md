@@ -38,3 +38,11 @@ THe installation is not too complex but also not as easy as installing Barrier f
 you two helpful sources here. The first one is the [official wiki](https://looking-glass.io/wiki/Installation) which 
 should cover all details. The seconds one is [a video](https://www.youtube.com/watch?v=wEhvQEyiOwI) by a person that
 already made a bunch of videos about gpu-passthrough.
+
+
+## Samba
+**work in progress**
+
+
+## SCP
+**work in progress**

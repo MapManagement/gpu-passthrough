@@ -13,7 +13,7 @@ So after installing the AMD ISO of the distro, I configured the GUI (using GNOME
 
 To simplify the whole installation, I'll leave this here:
 ```
-sudo apt install emu-kvm qemu-utils libvirt-daemon-system libvirt-clients virt-manager ovmf
+sudo apt install qemu-kvm qemu-utils libvirt-daemon-system libvirt-clients virt-manager ovmf
 ```
 
 ## ISO Images
