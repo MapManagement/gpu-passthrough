@@ -70,7 +70,11 @@ hear it :D) and I'm not able to start any VM which uses my guest GPU. If I try t
 Unknown PCI header type '127'
 ```
 Unlike the "normal" reset bug it can be fixed by using a specific BIOS version. Therefore I already updated my BIOS to
-the most recent version. I have to admit that I did use the oldest available version of it before the update.
+the most recent version. I have to admit that I did use the oldest available version of it before the update.  
+**Update:** I found a really helpful source to solve the reset bug. It does not work for all
+AMD cards but the chance of having success is not that low. It worked for my Vega 56
+flawlessly already a multiple times. So I recommend to give following repo a try:  
+[Vendor Reset](https://github.com/gnif/vendor-reset)
 
 ---
 
