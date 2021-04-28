@@ -93,3 +93,36 @@ I found out that I need to change something in my VM setting in the virt-manager
 
 ---
 
+## Reset Bug Fix
+### **Problem**
+I encountered a problem while testign around with the
+[fix of AMD's reset bug I discovered](https://github.com/gnif/vendor-reset). So if I boot up a virtual machine which owns a 
+whole GPU, a mouse and a keyboard, the mouse will disconnect after awhile. I don't know why and what happens but ``dmesg``
+shows following processes:  
+```
+[ 3839.874525] vendor-reset-drm: atomfirmware: bios_scratch_reg_offset initialized to 4c
+[ 3840.118706] vfio-pci 0000:08:00.0: AMD_VEGA10: bus reset disabled? yes
+[ 3840.118713] vfio-pci 0000:08:00.0: AMD_VEGA10: SMU response reg: ffffffff, sol reg: 0, mp1 intr enabled? no, bl ready? no, baco? off
+[ 3840.118716] vfio-pci 0000:08:00.0: AMD_VEGA10: performing post-reset
+[ 3840.157584] vfio-pci 0000:08:00.0: AMD_VEGA10: reset result = 0
+[ 3850.276088] usb 1-6.2: reset full-speed USB device number 4 using xhci_hcd
+[ 3850.623792] usb 1-6.3: reset full-speed USB device number 7 using xhci_hcd
+[ 4406.233603] usb 1-6.3: reset full-speed USB device number 7 using xhci_hcd
+[ 4406.601910] usb 1-6.2: reset full-speed USB device number 4 using xhci_hcd
+[ 4406.949872] usb 1-6.2: reset full-speed USB device number 4 using xhci_hcd
+[ 4407.259143] input: USB Gaming Mouse as /devices/pci0000:00/0000:00:01.2/0000:02:00.0/usb1/1-6/1-6.2/1-6.2:1.0/0003:04D9:AD50.0012/input/input47
+[ 4407.259304] hid-generic 0003:04D9:AD50.0012: input,hidraw4: USB HID v1.10 Mouse [USB Gaming Mouse] on usb-0000:02:00.0-6.2/input0
+[ 4407.471271] input: USB Gaming Mouse Keyboard as /devices/pci0000:00/0000:00:01.2/0000:02:00.0/usb1/1-6/1-6.2/1-6.2:1.1/0003:04D9:AD50.0013/input/input48
+[ 4407.531319] input: USB Gaming Mouse System Control as /devices/pci0000:00/0000:00:01.2/0000:02:00.0/usb1/1-6/1-6.2/1-6.2:1.1/0003:04D9:AD50.0013/input/input49
+[ 4407.531398] input: USB Gaming Mouse Consumer Control as /devices/pci0000:00/0000:00:01.2/0000:02:00.0/usb1/1-6/1-6.2/1-6.2:1.1/0003:04D9:AD50.0013/input/input50
+[ 4407.531456] input: USB Gaming Mouse as /devices/pci0000:00/0000:00:01.2/0000:02:00.0/usb1/1-6/1-6.2/1-6.2:1.1/0003:04D9:AD50.0013/input/input51
+[ 4407.531538] input: USB Gaming Mouse as /devices/pci0000:00/0000:00:01.2/0000:02:00.0/usb1/1-6/1-6.2/1-6.2:1.1/0003:04D9:AD50.0013/input/input52
+[ 4407.531609] hid-generic 0003:04D9:AD50.0013: input,hiddev2,hidraw5: USB HID v1.10 Keyboard [USB Gaming Mouse] on usb-0000:02:00.0-6.2/input1
+[ 4407.561120] hid-generic 0003:04D9:AD50.0014: hiddev3,hidraw6: USB HID v1.10 Device [USB Gaming Mouse] on usb-0000:02:00.0-6.2/input2
+[ 4477.788893] usb 1-6.3: reset full-speed USB device number 7 using xhci_hcd
+[ 4490.704108] usb 1-6.3: reset full-speed USB device number 7 using xhci_hcd
+jan@jan-lin:~$ 
+```
+Obviously one of my USB devices is resetted. In this case it's my mouse (``USB Gaming Mouse``). If I restart the VM, I can
+use its mouse and keyboard flawlessly as soon as the reset starts again. 
+### **Solution**
