@@ -93,7 +93,7 @@ I found out that I need to change something in my VM setting in the virt-manager
 
 ---
 
-## Reset Bug Fix
+## Reset Bug Patch
 ### **Problem**
 I encountered a problem while testign around with the
 [fix of AMD's reset bug I discovered](https://github.com/gnif/vendor-reset). So if I boot up a virtual machine which owns a 
@@ -124,5 +124,16 @@ shows following processes:
 jan@jan-lin:~$ 
 ```
 Obviously one of my USB devices is resetted. In this case it's my mouse (``USB Gaming Mouse``). If I restart the VM, I can
-use its mouse and keyboard flawlessly as soon as the reset starts again. 
+use its mouse and keyboard flawlessly as soon as the reset starts again. Additionally I epxerienced some more weaknesses of
+reset patch. I do not only benefit from the patch so following list elaborates the advantages and disadvantages I know about.
+
+**Advantages**
+- graphics card resets properly after killing a VM from the host
+- more comfortable installation process of a VM with a dedicated gpu
+- no problems with Linux guests
+
+**Disadvantages**
+- conflicts between AMD drivers for Windows and the patch (cannot update drivers -> VM will restart)
+- weird behaviour when guest tries to go in standby mode (only Windows so far?)
+- USB devices are resetted as well (haven't found any pattern yet, only Windows so far?)
 ### **Solution**
