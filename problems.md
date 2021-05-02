@@ -93,12 +93,11 @@ I found out that I need to change something in my VM setting in the virt-manager
 
 ---
 
-## Reset Bug Patch
+## Weird Resets and Restarts
 ### **Problem**
-I encountered a problem while testign around with the
-[fix of AMD's reset bug I discovered](https://github.com/gnif/vendor-reset). So if I boot up a virtual machine which owns a 
-whole GPU, a mouse and a keyboard, the mouse will disconnect after awhile. I don't know why and what happens but ``dmesg``
-shows following processes:  
+I encountered a problem while testing around with one of my Windows VM. So if I boot up a virtual machine which
+owns some USB devices, they will be resetted after some time. This means, that my host will regain full access
+over this device. I don't know why and what happens but ``dmesg`` shows following processes:  
 ```
 [ 3839.874525] vendor-reset-drm: atomfirmware: bios_scratch_reg_offset initialized to 4c
 [ 3840.118706] vfio-pci 0000:08:00.0: AMD_VEGA10: bus reset disabled? yes
@@ -124,16 +123,11 @@ shows following processes:
 jan@jan-lin:~$ 
 ```
 Obviously one of my USB devices is resetted. In this case it's my mouse (``USB Gaming Mouse``). If I restart the VM, I can
-use its mouse and keyboard flawlessly as soon as the reset starts again. Additionally I epxerienced some more weaknesses of
-reset patch. I do not only benefit from the patch so following list elaborates the advantages and disadvantages I know about.
-
-**Advantages**
-- graphics card resets properly after killing a VM from the host
-- more comfortable installation process of a VM with a dedicated gpu
-- no problems with Linux guests
-
-**Disadvantages**
-- conflicts between AMD drivers for Windows and the patch (cannot update drivers -> VM will restart)
-- weird behaviour when guest tries to go in standby mode (only Windows so far?)
-- USB devices are resetted as well (haven't found any pattern yet, only Windows so far?)
+use its mouse and keyboard flawlessly as soon as the reset starts again. Additionally I epxerienced some more issues. If I want to update
+my video drivers, the VM will freeze and restart. Same happens if the Windows guest enters the standby mode.
 ### **Solution**
+I expected that the patch for the reset bug caused all of this but I found out that it actually was not the case. First I tested various
+other VMs which run operating systems like Kali Linux, Android, Elementary or also Windows. None of these seemed to have any similar issues
+so I checked the Windows VM which behaved kinda weird. At the end it was Corsair's iCUE software. Unsurprisingly, that such a software can
+lead to problems like that. So after uninstalling it, the guest ran stable again. Probably it's not only iCUE, other driver software likewise
+cause such unwanted behaviors.
