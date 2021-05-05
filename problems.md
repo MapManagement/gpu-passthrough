@@ -130,4 +130,8 @@ I expected that the patch for the reset bug caused all of this but I found out t
 other VMs which run operating systems like Kali Linux, Android, Elementary or also Windows. None of these seemed to have any similar issues
 so I checked the Windows VM which behaved kinda weird. At the end it was Corsair's iCUE software. Unsurprisingly, that such a software can
 lead to problems like that. So after uninstalling it, the guest ran stable again. Probably it's not only iCUE, other driver software likewise
-cause such unwanted behaviors.
+cause such unwanted behaviors.  
+**Update:** Eventhough removing iCUE already fixed some bugs, others didn't disappear. My USB devices kept resetting and made it nearly
+impossible to use my Windows VMs. After testing around I found out that switching the USB ports from 2.0 to 3.X fixed the issues. At this point
+I cannot explain why I need to use some of my 3.X USB ports instead of lower ones. Linux based VMs do not suffer from such problems and work
+fine without changing anything. Maybe the future will bring light into the darkness :D
