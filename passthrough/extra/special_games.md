@@ -15,4 +15,9 @@ that I was able to run Vanguard and play Valorant without getting kicked. Furthe
 added to this file as soon as they are finished. Certainly I will also explain how this "workaround" works.
 
 ## Workaround
-[Use these videos for now](../../sources.md#SomeOrdinaryGamers)
+[Use these videos for now](../../sources.md#SomeOrdinaryGamers)  
+Unfortunately, the workaround explained in the video above does not work anymore. It seems like Riot Games decided to
+develop a patch against that method. It happened only 1 or 2 weeks after the first posts and videos about the workaround were publicly available. Eventhough you were not able to bypass Vanguard just by running Valorant in a virtual machine,
+Riot obviously did not want players to use any kind of virtual machines and took action against the very popular
+workaround. I really want to mention that the main reason, why players were able to play Valorant in a virtual machine, was
+Windows' [nested virtualization](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/user-guide/nested-virtualization).
