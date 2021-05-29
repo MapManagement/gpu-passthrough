@@ -10,7 +10,7 @@ already clarified some stuff but only in a general and not very detailed form.
 [Barrier](https://github.com/debauchee/barrier) is actually the software I'm running on my system. There are several
 reasons for that:
 - it's open source and therefore for free
-- it supports Linux, MacOs and Wndows (also FreeBSD and OpenBSD but these are no the OSes I'm running the most)
+- it supports Linux, MacOs and Windows (also FreeBSD and OpenBSD but these are not the OSes I'm running the most)
 - it's a fork of the non-free software Synergy (basically before Synergy was commercialized)
 
 The main purpose of Barrier is to share your keyboard and mouse between two machines very easily. Normally it's used
