@@ -1,4 +1,4 @@
-# Mouse Sharing
+# Mouse And File sharing
 This file is not only about sharing a mouse between different machines (in my case the host and guest), it's also about
 sharing a keyboard, files and some more things I'll get to know in the future. "Mouse Sharing" seemed like a good title
 and therefore I decided to got with that. Following topics will be about different methods you can consider if you want
@@ -41,8 +41,45 @@ already made a bunch of videos about gpu-passthrough.
 
 
 ## Samba
-**work in progress**
+### Overview
+Samba is based on the so called SMB (**S**erver **M**essage **B**lock) protocol. It's open-source and allows you to create a file server on your system to share them with other computers within the network. If you create such a server and a client
+successfully connects to it, it can easily access any file which are stored in the shared directory. To cut a long story
+short, you have access to a non-local drive. Normally you use a dedicated server for this so all clients can share their own
+files. In this case, you don't need an extra server since your host OS will run the Samba process to provide the communication
+between the host and the guest. Thus file sharing is made very comfortable.
+### Installation
+Eventhough there are several tutorials to install and configure Samba, I want to include the whole process here as well.
+First of all you need to install the needed package:
+```
+apt install samba
+```
+Since we're sharing files, we have to specify a directory which will be accessable by other machines. Simply just add a new
+directory that provides enough capacity. For example:
+```
+mkdir /samba/pictures
+```
+Copy the exact path and paste it into the configuration file of Samba (``/etc/samba/smb.conf``) like this:
+```
+[pictures]
+    comment = My Pictures
+    path = /samba/pictures
+    read only = no
+    browsable = yes
+```
+Now you only need to restart the service. Consider to update your firewall rules. On an Ubuntu server for example, you need to
+allow Samba traffic:
+```
+sudo service smbd restart
+sudo ufw allow samba
+```
+If you want to, you can also secure it with a password. To do so, just use following command. ``your_user`` must be a a user
+which exists on your host. If you run this, you will be prompted to enter a password:
+```
+sudo smbpasswd -a your_user
+```
 
-
+You can now add the freshly created file server to your guest just by right clicking on the "Network" tab in your file 
+explorer under Windows. Next select "Map network drive..." and enter the server address, your user name and the corresponding
+password.
 ## SCP
 **work in progress**
