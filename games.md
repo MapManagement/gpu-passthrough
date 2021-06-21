@@ -16,3 +16,10 @@ somehting at that time, I chose that game because I've never heard of any probel
 anti-cheat software. It also runs under Linux if you're using [Proton](https://www.protondb.com/)
 , therefore I had no worries about getting banned, kicked or whatever. To sum it all up, I can
 only tell about good experiences with Overwatch in a virtual machine.
+
+## Chivalry 2
+Recently I started playing Chivalry 2 and I really enjoyed playing it within my Windows guest. I didn't experience any
+bugsor crashes and played with almost the same FPS like on my native installation. I was also able to use my host
+keyboard because of [Barrier](passthrough/extra/mouse-sharing.md#Barrier). But be aware, you can't use your host mouse
+if you don't want to play with very weird mouse movements. It only happened to me when I was playing a game in fullscreen
+but I'm fine with using another mouse for games as long as I'm able to use only mouse for desktop stuff.
