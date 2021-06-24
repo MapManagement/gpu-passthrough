@@ -117,8 +117,8 @@ device IDs. For example the IDs I wrote down:
 ```
 Those devices will now be given to VFIO. This means that your guest GPU cannot be used anymore by the host OS and
 therefore you will not have any output on all screens connected to that card after doing so. So don't be 
-surprised. But how do we do that? That is the part where I think that Pop_OS! makes it really for us at least from
-that what I know. Maybe it's most often that simple and I chose more advanced techniques in the past.  
+surprised. But how do we do that? That is the part where I think that Pop_OS! makes it really easy for us at least
+from that what I know. Maybe it's most often that simple and I chose more advanced techniques in the past.  
 Coming back to the binding, you need to open up this file:
 ```
 /boot/efi/loader/entries/Pop_OS-current.conf
