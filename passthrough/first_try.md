@@ -228,7 +228,9 @@ drivers.
 The only thing I changed after the creation process at my first try can be found [here](/problems.md##Upload-Speed).
 It improves your upload speed quite a lot. This means that I created the VM by clicking
 on ``Create`` at the bottom right afterwards and booted into it. The whole installation is covered by
-the next section.
+the next section.  
+You can find the XML file of my Windows 10 guest [here](win10.xml). It should include at least everything
+what was listed within this explanation. But be aware It is **not** the VM which owns its own disk to boot into it.
 
 ## Installing Windows
 The VM should start after some background processes are finished. Depending on your machine, you
