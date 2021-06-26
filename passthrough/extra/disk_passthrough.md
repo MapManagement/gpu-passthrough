@@ -35,7 +35,8 @@ lspci -k
 As always you need to create a VM. Just do it as if you would do it for a normal Windows guest which has access to
 one of your GPUs. You can check every step [here](../first_try.md). But instead of creating an extra disk device
 for your guest, you will need to pass your whole SATA/NVMe controller. Now set it as the first boot option and fire
-up your system. Install Windows and the virtio drivers. 
+up your system. Install Windows and the virtio drivers.
+![](/resources/disk_passthrough.png) 
 
 ## UUID
 Eventhough I could boot Windows natively and use it as I normally would, I went into some issues as soon as I 
@@ -45,7 +46,7 @@ You can get it by running this short command in the command prompt:
 ```
 WMIC csproduct list /format
 ```
-Save the UUID, you will need it for your VM XML file later on. So get back to Windows, start virt-manager and create
+Save the UUID, you will need it for your VM XML file later on. So get back tinot Linux, start virt-manager and create
 a new VM. I just adjusted everything like the old "BareMetal" VM, how I called it, but changed one little thing.
 Instead of using a random generated UUID for my guest, I entered that one, which I just got from the native
 Windows boot. Start the installation and you will probably end in your Windows installation without any problems. 
