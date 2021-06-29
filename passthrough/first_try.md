@@ -235,14 +235,25 @@ what was listed within this explanation. But be aware It is **not** the VM which
 ## Installing Windows
 The VM should start after some background processes are finished. Depending on your machine, you
 either see the Windows installation within your "virtual monitor" or on your extra monitor. However,
-you now have to install Windows as usual. There are more than enough out there which explain how
-Windows can be installed and as I already said, it's not different from a installing Windows directly
-on your machine. It's also possible to already install the virtio drivers while selecting your boot
-drive by clicking on ``Load driver``. Make sure to select the right ones and install them. You really
-don't have to unless you need to because of some specific reasons. I'll cover the whole driver
-installation process later on since I did it that way. If you did everything right and don't run into
-any common issues you should end up in Windows like me. I checked the Taskmanager and saw my Vega,
-16GB of RAM and my 6 cores and 12 threads. Now I needed to install the virtio drivers. Compared to
-all other steps I've done so far it seemed to be the easiest one.
+you now have to install Windows as usual. There are more than enough guides out there which explain how
+Windows can be installed and as I already said, it's not different from installing Windows directly
+on your machine. When selecting your installation drive, you're also able to load the virtio drivers by
+clicking on ``Load driver``. Sometimes you need to do it in order to see your empty virtio drive(s).
+I'll cover the whole driver installation process later on. If you did everything right and didn't run
+into any common issues you should end up in Windows like me. I checked the Taskmanager and saw my
+Vega, 16GB of RAM and my 6 cores and 12 threads. Now I needed to install the virtio drivers.
+Compared to all other steps I've done so far it seemed to be the easiest one.
 
 ## Configuring Windows
+To ensure that basic functionalities and processes run without any problems on your guest, you have to
+install the virtio drivers. I passed an extra CD drive to my guest which contained all needed files
+and executables. 
+![](/resources/windows_cd_drivers.png)
+However you gain access to those files, you need to install the drivers. The executable to run is called
+``virtio-win-get-x64``. If the name changes over time, just look for a installer package for Windows
+which is made for x64 systems. After you installed all drivers, you should see your GPU, connect to
+the network etc. if it not happened yet. Either way, to make sure that everything works properly, restart
+your guest once. Now you can do whatever you want. It runs nearly as good as a native installtion on your
+machine, depending on the amount of RAM and CPU cores you gave to the guest. You can also install
+an official GPU driver. I downloaded the AMD drivers and only went into problems when I wanted to update
+to a specific version. Just try out what fits best for you.

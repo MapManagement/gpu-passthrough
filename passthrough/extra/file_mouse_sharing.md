@@ -81,5 +81,6 @@ sudo smbpasswd -a your_user
 You can now add the freshly created file server to your guest just by right clicking on the "Network" tab in your file 
 explorer under Windows. Next select "Map network drive..." and enter the server address, your user name and the corresponding
 password.
+![](/resources/samba_network_drive.png)
 ## SCP
 **work in progress**
