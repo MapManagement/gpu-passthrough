@@ -135,3 +135,16 @@ cause such unwanted behaviors.
 impossible to use my Windows VMs. After testing around I found out that switching the USB ports from 2.0 to 3.X fixed the issues. At this point
 I cannot explain why I need to use some of my 3.X USB ports instead of lower ones. Linux based VMs do not suffer from such problems and work
 fine without changing anything. Maybe the future will bring light into the darkness :D
+
+---
+
+## USB Game-Controller
+## **Problem**
+Passing a USB controller (in my case an Xbox One controller) makes more problems than passing a mouse or a keyboard. I tried it multiple times but
+no matter how and what I tried, the controller was usable within my guest. First time I wanted to pass it, I encountered an error that its device ID
+is not valid. I read something about it and thought that it's just a problem of Xbox controllers in general. Nevertheless, I was able to pass it
+a bit later and didn't know why it worked. Eventhough I started the VM and didn't encounter any error, the controller just disconnected from my guest.
+I'm not quite sure if it's also just a issue of the controller or if I need to use another USB port. Check the section above this and you should know
+what I'm talking about.
+### **Solution**
+None yet

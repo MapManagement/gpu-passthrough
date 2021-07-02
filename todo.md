@@ -10,21 +10,21 @@
 ## vfio Binding
 - [x] understanding it in Pop!_OS
 - [x] doing it on own machine
-- [ ] adding more parts (drives, controllers...)
+- [x] adding more parts (drives, controllers...)
 ## Reset Bug
-- [ ] finding workaround
+- [x] finding workaround
 - [x] understanding it
-- [ ] testing for stability
-- [ ] writing it down
+- [x] testing for stability
+- [x] writing it down
 
 ## Creating new VMs
-- [ ] writing down all necessary steps and options
+- [x] writing down all necessary steps and options
 - [ ] automation / finding fast and easy way
 - [ ] writing it down
 
 ## Fast VM
 - [ ] finding most stable but also fast VM options
-- [ ] understand what they do and how they work
+- [x] understand what they do and how they work
 - [ ] writing it down
 
 ## Barrier
@@ -35,11 +35,11 @@
 - [ ] using it for daily tasks
 
 ## Samba
-- [ ] understanding it
-- [ ] checking the requirements and the setup process
-- [ ] trying it on own machine
-- [ ] writing it down
-- [ ] using it for daily tasks
+- [x] understanding it
+- [x] checking the requirements and the setup process
+- [x] trying it on own machine
+- [x] writing it down
+- [x] using it for daily tasks
 
 ## possible Upgrades
 - [ ] X570 board for better IOMMU groups
