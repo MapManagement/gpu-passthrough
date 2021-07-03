@@ -147,4 +147,8 @@ a bit later and didn't know why it worked. Eventhough I started the VM and didn'
 I'm not quite sure if it's also just a issue of the controller or if I need to use another USB port. Check the section above this and you should know
 what I'm talking about.
 ### **Solution**
-None yet
+I also tested a PS4 controller and surprisingly I could easily pass and use it. Therefore I knew it has to be a problem with Xbox One controllers and
+not all controllers in general. After some research I found [this issue](https://gitlab.com/qemu-project/qemu/-/issues/157) on qemu's GitLab page. 
+One user recommended to blacklist the so called ``xpad`` driver through modeprobe.d. I wanted to try it immediately and blacklisted the driver, 
+rebooted my PC and hoped that everything will work as described. Luckily it did and was able to use the controller within my guest. No annoying
+resets and not disconnects.
