@@ -23,7 +23,13 @@
   - https://www.elektronik-kompendium.de/sites/com/1101011.htm
 
 - ## SomeOrdinaryGamers
-  - [setting up a gpu passthrough](https://www.youtube.com/watch?v=h7SG7ccjn-g)
+  - [setting up gpu passthrough](https://www.youtube.com/watch?v=h7SG7ccjn-g)
   - [Valorant in a KVM](https://www.youtube.com/watch?v=L1JCCdo1bG4)
+
 - ## Pavol Elsig
   - [looking-glass guide](https://www.youtube.com/watch?v=wEhvQEyiOwI)
+
+- ## Arch Build
+  - [official wiki](https://wiki.archlinux.org/title/PCI_passthrough_via_OVMF)
+  - https://github.com/vanities/GPU-Passthrough-Arch-Linux-to-Windows10
+  - https://gist.github.com/MaxXor/e24094f2b0624cf702f534f1a0dea0be

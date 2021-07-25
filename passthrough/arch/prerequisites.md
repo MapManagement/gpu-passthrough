@@ -4,6 +4,13 @@ This time I want to try Arch Linux as my host OS. On one hand to get a feeling f
 because of its Rolling Releases and increased modularity. If you need any more information about the build of the machine using Arch, visit [the guide of the
 official Arch wiki](https://wiki.archlinux.org/title/PCI_passthrough_via_OVMF).
 
+## BIOS Settings
+As always, a machine that passes specific devices to guest, it is necessary to enable some features in your BIOS. Therefore the list of the settings
+you need to check for is identical to the Pop_OS! build:
+- enable IOMMU
+- enable VT-d and VT-x (Intel) or AMD-V (AMD) for virtualization support
+- if needed enable CSM and/or ACS
+
 ## Needed Packages
 - [qemu](https://wiki.archlinux.org/title/QEMU)
 - [virt-manager](https://virt-manager.org/)

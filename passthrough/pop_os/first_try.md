@@ -113,7 +113,7 @@ understand everything behind it. But for now, I need to pass them to my VM too o
 as soon as I want to create a VM using my guest GPU. If your IOMMU groups are fine you have to write down those
 device IDs. For example the IDs I wrote down:
 ```
-1022:1482, 1022:1483, 1022:1470, 1022:1471, 1002:687f, 1002:aaf8
+1002:687f, 1002:aaf8
 ```
 Those devices will now be given to VFIO. This means that your guest GPU cannot be used anymore by the host OS and
 therefore you will not have any output on all screens connected to that card after doing so. So don't be 
@@ -126,11 +126,11 @@ Coming back to the binding, you need to open up this file:
 This contains boot parameters for your host OS. Here we have to set those parameters that will bind your devices
 to VFIO at boot. To do so, you simple just have to add your device IDs and a general paramter like this:
 ```
-options root=UUID=486bc510-1589-40ec-b4d3-f85cab587c46 ro quiet loglevel=0 systemd.show_status=false splash amd_iommu=on vfio-pci.ids="1002:aaf8,1002:687f,1022:1471,1022:1470,1022:1483,1022:1482"
+options root=UUID=486bc510-1589-40ec-b4d3-f85cab587c46 ro quiet loglevel=0 systemd.show_status=false splash amd_iommu=on vfio-pci.ids="1002:aaf8,1002:687f"
 ```
 So to make sure what I added to **options**:
 ```
-amd_iommu=on vfio-pci.ids="1002:aaf8,1002:687f,1022:1471,1022:1470,1022:1483,1022:1482"
+amd_iommu=on vfio-pci.ids="1002:aaf8,1002:687f"
 ```
 Afterwards you have to reboot your machine since the freshly added parameters are only initialized at boot. If you
 did everything right, you should not have any output ont any screen that is connected to your guest GPU. Otherwise
