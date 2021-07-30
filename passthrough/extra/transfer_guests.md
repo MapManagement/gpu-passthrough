@@ -12,5 +12,26 @@ Of course, you cannot use them in the way they are after exporting them to anoth
 to replicate multiple configuration by hand. You can already see the XML file in virt-manager instead of the standard GUI:
 ![](/resources/xml-configuration.png)
 Addtionally to your guest configuration you will probably need the actual data of your guest. In other words, you definitely want your virtual disks saved as well.
+In contrast to relatively small XML files, virtual disks need much more space. So if you plan on exporting them to another machine, be aware of the amount of storage
+you still have. It won't be a big deal if you only need to backup a few guests but the more VMs you create over time, the more storage will be need logically.
 
- ## How can I save them?
+## How can I save them?
+Saving your XML files is the quite easy. There is an interface for your terminal called
+[virsh](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/5/html/virtualization/chap-virtualization-managing_guests_with_virsh). By using virsh,
+you can re-adjust your guests in many different ways, including the generation of XML files of your guests. You can use following command:
+```
+virsh dumpxml guest-name > guest-name.xml
+```
+You will get your guest configuration file out of it. Store it where- and however you want but keep in mind, it's always useful to have all configuration files multiple
+times.  
+Virtual disks can be treated like normal files. Store them on your NAS, in a cloud or wherever you want to. It's similar to the configuration files but as I already said
+they need much more space since they contain all the data of your guest. In my case, all guest images are stored on a dedicated SSD. From time to time I copy all data of
+this SSD to my local server. And even if I wanted to switch to another Linux distribution (probably Arch :D), I can simply just mount the SSD and I'll be fine.
+
+
+## Using on other machines
+The transfer of your guest images should already be clear. The question is, how can I "import" my XML configurations via virsh. There's also a simple command:
+```
+virsh define guest-name.xml
+```
+It will create a guest for you. Check if everything worked by starting virt-manager.
