@@ -28,3 +28,25 @@ Don't forget, if you want to pass any more devices to a guest later on, remember
 in a further step and added its ID to my list for example.
 
 ## Binding devices
+As soons as all device IDs are known the devices' drivers need to be replaced. You don't want your devices to be controlled by "standard" drivers, it's
+neccessary to use s specific vfio driver. To do so, we will adjust the boot parameters of our system. They will make sure that all devices, you want to
+pass to a guest, cannot be accessed by normal but by these vfio drivers. Keep in mind, all devices that use vfio drivers are not reachable by your host 
+anymore. You can either bind your devices via kernel parameters (did that in my Pop_OS! build) or via a new modprobe config file. If you decide to do
+it via a new modprobe configuration, don't forget to regenerate your intiramfs. Either way, add following text/lines:
+- For kernel parameters, edit ``/etc/default/grub`` and add your device IDs like this:  
+```
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash vfio-pci.ids=1002:687f, 1002:aaf8"
+```
+- For modprobe, create a new config like ``/etc/modprobe.d/my-vfio.conf and add your IDs:  
+```
+options vfio-pci ids=1002:687f, 1002:aaf8
+```
+To prevent any drivers to load before the virtio one's can, it is recommended to adjust the loaded modules at boot time. Just add following modules to your
+mkinitcpio configuration (``/etc/mkinitcpio.conf``):
+```
+MODULES=(... vfio_pci vfio vfio_iommu_type1 vfio_virqfd modconf ...)
+```
+Now it's time to regenerate your initramfs again. You can do it by using following bash script:
+```
+mkinitcpio -P
+```
