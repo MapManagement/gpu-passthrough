@@ -50,3 +50,36 @@ Now it's time to regenerate your initramfs again. You can do it by using followi
 ```
 mkinitcpio -P
 ```
+After restarting the machine, everything should be fine, especially if you're monitor(s) connected to your guest GPU is not displaying anything
+anymore. But as always, we want to verify that actually all steps had success and therefore all devices are bound to vfio drivers. Of course, there
+is a simple command to use:
+```
+dmesg | grep -i vfio
+```
+Several lines will be printed to your console but only a few lines have to be checked. So look for your device IDs in the first few lines:
+```
+[0.000000] Command line: BOOT_IMAGE=/boot/vmlinuz-linux root=UUID=0606f38b-2e99-4e1f-8309-d1795e5a9fd3 rw loglevel=3 quiet amd_iommu=on iommu=pt vfio-pci.ids=1002:687f,1002:aaf8
+[    0.091380] Kernel command line: BOOT_IMAGE=/boot/vmlinuz-linux root=UUID=0606f38b-2e99-4e1f-8309-d1795e5a9fd3 rw loglevel=3 quiet amd_iommu=on iommu=pt vfio-pci.ids=1002:687f,1002:aaf8
+[    6.190502] VFIO - User Level meta-driver version: 0.3
+[    6.195450] vfio-pci 0000:08:00.0: vgaarb: changed VGA decodes: olddecodes=io+mem,decodes=io+mem:owns=none
+[    6.209499] vfio_pci: add [1002:687f[ffffffff:ffffffff]] class 0x000000/00000000
+[    6.226111] vfio_pci: add [1002:aaf8[ffffffff:ffffffff]] class 0x000000/00000000
+[ 2826.402590] vfio-pci 0000:08:00.0: enabling device (0000 -> 0003)
+
+```
+Also verify that all devices are in use by virtio drivers. You can do this by  listing all your PCI devices in combination with their kernel drivers. The
+command to use is called ``lspci``. To get the exact output, use these flags:
+```
+lspci -nnk
+```
+Now check the ``Kernel driver in use:``. It should display ``vfio-pci``:
+```
+08:00.0 VGA compatible controller [0300]: Advanced Micro Devices, Inc. [AMD/ATI] Vega 10 XL/XT [Radeon RX Vega 56/64] [1002:687f] (rev c3)
+	Subsystem: Sapphire Technology Limited Radeon RX VEGA 56 Pulse 8GB OC HBM2 [1da2:e376]
+	Kernel driver in use: vfio-pci
+	Kernel modules: amdgpu
+08:00.1 Audio device [0403]: Advanced Micro Devices, Inc. [AMD/ATI] Vega 10 HDMI Audio [Radeon Vega 56/64] [1002:aaf8]
+	Subsystem: Advanced Micro Devices, Inc. [AMD/ATI] Vega 10 HDMI Audio [Radeon Vega 56/64] [1002:aaf8]
+	Kernel driver in use: vfio-pci
+	Kernel modules: snd_hda_intel
+```
