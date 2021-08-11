@@ -83,3 +83,10 @@ Now check the ``Kernel driver in use:``. It should display ``vfio-pci``:
 	Kernel driver in use: vfio-pci
 	Kernel modules: snd_hda_intel
 ```
+
+## Creating guests
+I already talked about this step in my [Pop_OS! guide](../pop_os/first_try.md#Creating-the-VM). Creating guests in Arch using virt-manager is
+the same. Just open virt-manager and start configuring your virtual machine.  
+Since I already created all of my guests in Pop_OS!, I only had to import all important files. Fortunately, I made an extra file about
+"transfer guests". You can find it [here](../extra/transfer_guests.md). It covers all steps from making backups of existing VMs to 
+importing them into another host machine.
