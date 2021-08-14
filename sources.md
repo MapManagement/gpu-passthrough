@@ -33,3 +33,6 @@
   - [official wiki](https://wiki.archlinux.org/title/PCI_passthrough_via_OVMF)
   - https://github.com/vanities/GPU-Passthrough-Arch-Linux-to-Windows10
   - https://gist.github.com/MaxXor/e24094f2b0624cf702f534f1a0dea0be
+
+- ## Mathias Hueber
+  - [sound of guests](https://mathiashueber.com/virtual-machine-audio-setup-get-pulse-audio-working/)

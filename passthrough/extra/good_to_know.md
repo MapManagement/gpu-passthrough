@@ -28,3 +28,17 @@ games in my Windows VM. But how do I add a whole disk to guest?
 First of all you need to install Windows or any other OS you want to use. I recommend to store it on it's disk. It will
 simplify the configuration later on. So just install it as you would normally do. If you're finished, boot into your host OS
 to configure everything else.
+
+## Sound
+Especially if you want a "normal" experience when playing some games, sound should not be missed. No worries, passing sound from your guest
+to your host is not difficult at all as long as you don't have any special demands. As always, there are multiple ways to hear everything that
+your guest sends as output but for now I will only cover the easiest method.  
+### Spice server
+So after installing all virtio drivers in your virtual machine it is neccessary to shut it down again since we're going to change the actual config
+file of the given virtual machine. Open virt-manager and select the virtual machine to view all details. Press the ``Add Hardware`` button and select
+``Graphics``. You should see following options to adjust but in this case we don't have to change anything.
+![](/resources/add-spice-server.png)  
+Once you added a ``Spice server`` you already good to go. Don't be confused if multiple devices were added to your VM config, it will need all of
+them to work properly. Now start your guest and click on the little monitor in the top left corner. Its tooltip says ``Show the graphical console``.
+The windows will change from ``Details`` to ``Console``. As long as this windows is opened you should hear all sounds of your guest.
+![](/resources/running-spice-server.png)
