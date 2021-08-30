@@ -3,9 +3,9 @@
 ## Tests/Problem fixing
 - [x] gpu fans spinning at max speed after shutting VM down
 - [x] testing overall performance in games
-- [ ] checking the behavior of popular anti cheats
-- [ ] testing the direct boot via own partition/drive
-- [ ] adding sound to VM (input and output)
+- [x] checking the behavior of popular anti cheats
+- [x] testing the direct boot via own partition/drive
+- [x] adding sound to VM (input and output)
 - [ ] adding USB devices like controllers to VM
 ## vfio Binding
 - [x] understanding it in Pop!_OS
@@ -23,16 +23,16 @@
 - [ ] writing it down
 
 ## Fast VM
-- [ ] finding most stable but also fast VM options
+- [x] finding most stable but also fast VM options
 - [x] understand what they do and how they work
-- [ ] writing it down
+- [x] writing it down
 
 ## Barrier
 - [x] understanding it
 - [x] checking the requirements and the setup process
 - [x] trying it on own machine
 - [x] writing it down
-- [ ] using it for daily tasks
+- [x] using it for daily tasks
 
 ## Samba
 - [x] understanding it

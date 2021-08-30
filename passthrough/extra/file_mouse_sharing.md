@@ -18,6 +18,14 @@ to share them between non-virtualized OSes but it obviously works with virtualiz
 by side it does not bother me at all and simplifies many tasks. Unfortunately, drag and drop does not work on Linux 
 systems which means that I cannot share files using it. So I might need to find another way of doing so. Nonetheless,
 I'm really happy about this open source software and can really recommend it so far.  
+**Update:** When I used Barrier on Pop_OS! I never experienced any annoying bugs. Switching to Arch also meant that
+I`ll try Wayland instead of X11. At the beginning I was able to use Barrier but had some weird bugs. For example
+if I hovered my mouse to a guest's screen, the cursor started to jump from host to guest display. Only if I left-clicked
+once I could use the guest with my host's mouse and keyboard properly. Additionally some keys were not accepted by the
+guest. I'm only talking about my Super-Key/Windows-Key and function keys. After some time I (maybe because of some
+updates) I couldn't hover from my host to any guest anymore. Either my cursor was stuck on the left side of the guest's
+monitor or I wasn't able to "cross the border" so to say. I think that it's related to Wayland at least to a specific
+update and some of the errors I encountered so far. I'll update this if I find a solution.
 ### Installation
 Just download the corresponding program for your system, the link at the top should explain how to install Barrier on
 different operating systems. If you installed them on your ``client`` and ``server``, as they call it, you can connect
