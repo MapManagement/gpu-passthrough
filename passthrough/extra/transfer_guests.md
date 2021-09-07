@@ -29,7 +29,7 @@ they need much more space since they contain all the data of your guest. In my c
 this SSD to my local server. And even if I wanted to switch to another Linux distribution (probably Arch :D), I can simply just mount the SSD and I'll be fine.
 
 
-## Using on other machines
+## Other machines
 The transfer of your guest images should already be clear. The question is, how can I "import" my XML configurations via virsh. There's also a simple command:
 ```
 virsh define guest-name.xml

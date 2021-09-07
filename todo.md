@@ -6,7 +6,7 @@
 - [x] checking the behavior of popular anti cheats
 - [x] testing the direct boot via own partition/drive
 - [x] adding sound to VM (input and output)
-- [ ] adding USB devices like controllers to VM
+- [ ] adding USB devices like game controllers to VMs
 ## vfio Binding
 - [x] understanding it in Pop!_OS
 - [x] doing it on own machine

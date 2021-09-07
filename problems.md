@@ -151,7 +151,7 @@ I also tested a PS4 controller and surprisingly I could easily pass and use it. 
 not all controllers in general. After some research I found [this issue](https://gitlab.com/qemu-project/qemu/-/issues/157) on qemu's GitLab page. 
 One user recommended to blacklist the so called ``xpad`` driver through modeprobe.d. I wanted to try it immediately and blacklisted the driver, 
 rebooted my PC and hoped that everything will work as described. Luckily it did and was able to use the controller within my guest. No annoying
-resets and not disconnects.
+resets and not disconnects.  
 **WARNING:** After passing my Xbox One controller to a Windows guest, my host crashed from time to time and I didn't find anything about it in my logs.
 I cannot say to 100% that it's a general problem of Xbox One controllers, neither can I say what happened when my PC crashed. The only thing I know
 is that I didn't encounter any more crashes as soon as I removed the controller from my guest. Not just physically, also from its XML config.
