@@ -33,6 +33,7 @@ to configure everything else.
 Especially if you want a "normal" experience when playing some games, sound should not be missed. No worries, passing sound from your guest
 to your host is not difficult at all as long as you don't have any special demands. As always, there are multiple ways to hear everything that
 your guest sends as output but for now I will only cover the easiest method.  
+
 ### Spice server
 So after installing all virtio drivers in your virtual machine it is neccessary to shut it down again since we're going to change the actual config
 file of the given virtual machine. Open virt-manager and select the virtual machine to view all details. Press the ``Add Hardware`` button and select
@@ -44,6 +45,7 @@ The windows will change from ``Details`` to ``Console``. As long as this windows
 definitely hear some delay. While playing some games, I noticed how each sound appeared like a half to a full second later than it should. To get
 rid of this dealy you have to try other methods.
 ![](/resources/running-spice-server.png)
+
 ### PulseAudio
 I've tested this method with Arch and Pop_OS! as host operating systems and both times I was able to get sound from my guest without any
 remarkable delay. I also couldn't notice any difference in the sound quality eventhough some users complained about it in some articles or
@@ -90,3 +92,11 @@ no other devices are called ``hda`` otherwise you will face an error saying that
 </domain>
 ```
 Now reboot your system and check if you can hear your guest's sound. If not, check the server using the ``pax11publish``. It should print the location of your server and some ID. If not, something with your PulseAudio is not configured correctly.
+
+### USB controllers
+If you're machine contains multiple USB controllers that are within their own IOMMU groups, you can easily pass one of them to your guest.
+This means that all USB ports which belong to that specific controllers will be given to the virtual machine. You gain the advantage of 
+plugging or unplugging any devices while the guest is running. Some devices, like Xbox One controllers, actually need to be connected
+to your guest using this way. Otherwise it will be resetted and reconnected to your host after some time. Eventhough your USB controller
+has its own device ID too, it can be passed without blacklisting it at boot time. Simply just add it to the hardware components in the
+VM configuraton and you're good to go.
