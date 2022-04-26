@@ -8,7 +8,7 @@
 **Cooler:** Arctic Liquid Freezer II 360  
 **Host GPU:** PowerColor Radeon RX 550 Red Dragon  
 in second PCIe slot
-**Guest GPU:** Sapphire Pulse Radeon RX Vega 56  
+**Guest GPU:** Sapphire Pulse Radeon RX Vega 56 / PowerColor Red Devil RX 6700XT
 in first PCIe slot
 **Storage**: SSD 240GiB, 3TiB HDD, (120GiB SSD, 1TiB HDD, 256GiB NVMe)  
 For testing, only the first two drives will be used. When going for an actual daily machine, I will probably use all of
